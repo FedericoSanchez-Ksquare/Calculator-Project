@@ -3,17 +3,34 @@
 
 function buttonFun(input) {
   let screen = document.getElementById("screen").value;
-  screen = screen + input;
-  if (screen == "" && input == 0) {
+  // operators loop
+  if (input == "+") {
+    Add(screen, input);
+  } else if (screen == "" && input == 0) {
   } else if (input == "c") {
     screen = null;
     document.getElementById("screen").value = screen;
   } else if (input == "=") {
     Equals(screen, input);
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
   }
-  document.getElementById("screen").value = screen;
   //screen += screen.setAttribute("value", input);
   //test
+}
+
+function Add(screen, input) {
+  console.log(screen, input);
+  console.log("mas");
+  if (screen == "" && input == 0) {
+  } else if (input == "c") {
+    screen = null;
+    document.getElementById("screen").value = screen;
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+  }
 }
 
 function Equals(screen, input) {
