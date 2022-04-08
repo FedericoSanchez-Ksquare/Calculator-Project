@@ -6,6 +6,8 @@ function buttonFun(input) {
   // operators loop
   if (input == "+") {
     Add(screen, input);
+  } else if (input == "-") {
+    Minus(screen, input);
   } else if (screen == "" && input == 0) {
   } else if (input == "c") {
     screen = null;
@@ -24,6 +26,19 @@ function Add(screen, input) {
   console.log(screen, input);
   console.log("mas");
   if (screen == "" && input == 0) {
+  } else if (input == "c") {
+    screen = null;
+    document.getElementById("screen").value = screen;
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+  }
+}
+
+function Minus(screen, input) {
+  console.log("minus");
+  if (screen == "" && input == 0) {
+  } else if (input == "." && screen.includes("+")) {
   } else if (input == "c") {
     screen = null;
     document.getElementById("screen").value = screen;
