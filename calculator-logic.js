@@ -48,6 +48,19 @@ function Minus(screen, input) {
   }
 }
 
+function Times(screen, input) {
+  console.log("times");
+  if (screen == "" && input == 0) {
+  } else if (input == "." && screen.includes(".")) {
+  } else if (input == "c") {
+    screen = null;
+    document.getElementById("screen").value = screen;
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+  }
+}
+
 function Equals(screen, input) {
   console.log(screen, input);
   if (input == "=") {
