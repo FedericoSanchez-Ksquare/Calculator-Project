@@ -13,6 +13,7 @@ function buttonFun(input) {
   }
   document.getElementById("screen").value = screen;
   //screen += screen.setAttribute("value", input);
+  //test
 }
 
 function Equals(screen, input) {
