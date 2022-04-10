@@ -103,11 +103,11 @@ function GeneralEquals(screen, input) {
 }
 
 function Equals(screen, input) {
-  console.log("igual");
-  let res = screen;
-  screen = null;
-  document.getElementById("screen").value = screen;
-  document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+    console.log("igual");
+    let res = screen;
+    screen = null;
+    document.getElementById("screen").value = screen;
+    document.getElementById("screen").value = eval(res.toString()).toFixed(4);
 }
 function Add(screen, input) {
   console.log("Add");
@@ -143,3 +143,29 @@ function Division(screen, input) {
     document.getElementById("screen").value = screen;
   }
 }
+function Equals(screen, input) {
+  let screenNew;
+
+  if (screen === "+" || screen == "-" || screen == "*" || screen == "/") {
+  } else if (screen.includes("+*") || screen.includes("+/")) {
+    screenNew = screen.replace("+", "");
+    let res = screenNew;
+    screen = null;
+    document.getElementById("screen").value = screen;
+    document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+  } else if (screen.includes("-/") || screen.includes("-*")) {
+    screenNew = screen.replace("-", "");
+    console.log("igual");
+    let res = screenNew;
+    screen = null;
+    document.getElementById("screen").value = screen;
+    document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+  } else {
+    console.log("igual");
+    let res = screen;
+    screen = null;
+    document.getElementById("screen").value = screen;
+    document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+  }
+}
+
