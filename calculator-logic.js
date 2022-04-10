@@ -102,13 +102,6 @@ function GeneralEquals(screen, input) {
   }
 }
 
-function Equals(screen, input) {
-    console.log("igual");
-    let res = screen;
-    screen = null;
-    document.getElementById("screen").value = screen;
-    document.getElementById("screen").value = eval(res.toString()).toFixed(4);
-}
 function Add(screen, input) {
   console.log("Add");
   if (screen == "" && input == 0) {
@@ -168,4 +161,3 @@ function Equals(screen, input) {
     document.getElementById("screen").value = eval(res.toString()).toFixed(4);
   }
 }
-
