@@ -1,15 +1,32 @@
 //
 ///
-
+let resCounter = false;
+let opCounter = false;
 function buttonFun(input) {
   let screen = document.getElementById("screen").value;
   // Inputing screeen with general numbers
-  if (input == "c") {
-    screen = null;
-    document.getElementById("screen").value = screen;
+  if (resCounter == true) {
+    if (input == "c") {
+      screen = null;
+      document.getElementById("screen").value = screen;
+    } else {
+      screen = null;
+      document.getElementById("screen").value = screen;
+      screen = input;
+      resCounter = false;
+      document.getElementById("screen").value = screen;
+    }
   } else {
-    screen = screen + input;
-    document.getElementById("screen").value = screen;
+    resCounter = false;
+    if (input == "c") {
+      screen = null;
+      document.getElementById("screen").value = screen;
+    } else {
+      screen = screen + input;
+      opCounter = true;
+      resCounter = false;
+      document.getElementById("screen").value = screen;
+    }
   }
 }
 
@@ -18,41 +35,56 @@ function buttonOp(operator) {
   //operators choice
   switch (operator) {
     case "+":
-      if (operator == "+" && screen.includes("+")) {
-        console.log(screen.split(operator));
-        GeneralEquals(screen, operator);
+      resCounter = false;
+      console.log(screen.endsWith(operator) + " ends with");
+      if (screen.endsWith(operator) == true) {
       } else {
-        console.log(screen.split(operator));
-
-        Add(screen, operator);
+        if (opCounter == true) {
+          GeneralEquals(screen, "+");
+        } else {
+          Add(screen, operator);
+        }
       }
       break;
     case "-":
-      if (operator == "-" && screen.includes("-")) {
-        console.log(screen.split(operator));
-        GeneralEquals(screen, operator);
+      resCounter = false;
+      console.log(screen.endsWith(operator) + " ends with");
+      if (screen.endsWith(operator) == true) {
       } else {
-        console.log(screen.split(operator));
-        Minus(screen, operator);
+        if (opCounter == true) {
+          GeneralEquals(screen, "-");
+        } else {
+          Minus(screen, operator);
+        }
       }
       break;
     case "*":
-      if (operator == "*" && screen.includes("*")) {
-        console.log(screen.split(operator));
-        GeneralEquals(screen, operator);
+      resCounter = false;
+      console.log(screen.endsWith(operator) + " ends with");
+      if (screen.endsWith(operator) == true || screen.endsWith("/")) {
       } else {
-        console.log(screen.split(operator));
-        Times(screen, operator);
+        if (opCounter == true) {
+          GeneralEquals(screen, "*");
+        } else {
+          Times(screen, operator);
+        }
       }
       break;
     case "/":
-      if (operator == "/" && screen.includes("/")) {
-        console.log(screen.split(operator));
-        GeneralEquals(screen, operator);
+      resCounter = false;
+      if (screen.endsWith(operator) == true || screen.endsWith("*")) {
       } else {
-        console.log(screen.split(operator));
-        Times(screen, operator);
+        if (opCounter == true) {
+          GeneralEquals(screen, "/");
+        } else {
+          Division(screen, operator);
+        }
       }
+      break;
+    case ".":
+      screen = screen + operator;
+      document.getElementById("screen").value = screen;
+
       break;
     case "=":
       Equals(screen, operator);
@@ -64,41 +96,40 @@ function buttonOp(operator) {
 
 function GeneralEquals(screen, input) {
   console.log("general equals");
+  let res = screen;
+  switch (input) {
+    case "+":
+      screen = null;
+      document.getElementById("screen").value = screen;
+      document.getElementById("screen").value =
+        eval(res.toString()).toFixed(4) + input;
 
-  if ((input = "+")) {
-    if (screen == "+" && input == "+") {
-    } else {
-      let res = screen;
+      opCounter = false;
+      break;
+    case "-":
       screen = null;
       document.getElementById("screen").value = screen;
-      document.getElementById("screen").value = eval(res.toString()).toFixed(4);
-    }
-  } else if ((input = "-")) {
-    if (screen == "-" && input == "-") {
-    } else {
-      let res = screen;
+      document.getElementById("screen").value =
+        eval(res.toString()).toFixed(4) + input;
+      opCounter = false;
+      break;
+    case "*":
       screen = null;
       document.getElementById("screen").value = screen;
-      document.getElementById("screen").value = eval(res.toString()).toFixed(4);
-    }
-  } else if ((input = "*")) {
-    if (screen == "*" && input == "*") {
-    } else {
-      let res = screen;
+      document.getElementById("screen").value =
+        eval(res.toString()).toFixed(4) + input;
 
+      opCounter = false;
+      break;
+    case "/":
       screen = null;
       document.getElementById("screen").value = screen;
-      document.getElementById("screen").value = eval(res.toString()).toFixed(4);
-    }
-  } else if ((input = "/")) {
-    console.log(input + " input value" && screen.includes("/"));
-    if (screen == "/" && input == "/") {
-    } else {
-      let res = screen;
-      screen = null;
-      document.getElementById("screen").value = screen;
-      document.getElementById("screen").value = eval(res.toString()).toFixed(4);
-    }
+      document.getElementById("screen").value =
+        eval(res.toString()).toFixed(4) + input;
+
+      opCounter = false;
+      break;
+    default:
   }
 }
 
@@ -108,6 +139,7 @@ function Add(screen, input) {
   } else {
     screen = screen + input;
     document.getElementById("screen").value = screen;
+    opCounter = false;
   }
 }
 
@@ -117,6 +149,7 @@ function Minus(screen, input) {
   } else {
     screen = screen + input;
     document.getElementById("screen").value = screen;
+    opCounter = false;
   }
 }
 
@@ -126,6 +159,7 @@ function Times(screen, input) {
   } else {
     screen = screen + input;
     document.getElementById("screen").value = screen;
+    opCounter = false;
   }
 }
 function Division(screen, input) {
@@ -134,6 +168,7 @@ function Division(screen, input) {
   } else {
     screen = screen + input;
     document.getElementById("screen").value = screen;
+    opCounter = false;
   }
 }
 function Equals(screen, input) {
@@ -146,6 +181,7 @@ function Equals(screen, input) {
     screen = null;
     document.getElementById("screen").value = screen;
     document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+    resCounter = true;
   } else if (screen.includes("-/") || screen.includes("-*")) {
     screenNew = screen.replace("-", "");
     console.log("igual");
@@ -153,11 +189,13 @@ function Equals(screen, input) {
     screen = null;
     document.getElementById("screen").value = screen;
     document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+    resCounter = true;
   } else {
     console.log("igual");
     let res = screen;
     screen = null;
     document.getElementById("screen").value = screen;
     document.getElementById("screen").value = eval(res.toString()).toFixed(4);
+    resCounter = true;
   }
 }
