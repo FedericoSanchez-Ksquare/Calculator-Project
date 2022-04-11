@@ -1,43 +1,69 @@
 //
 ///
 let dotCounter;
+let zeroCounter;
 let resCounter;
 let opCounter;
 function buttonFun(input) {
   let screen = document.getElementById("screen").value;
   // Inputing screeen with general numbers
+
   if (resCounter == true) {
     if (input == "c") {
+      dotCounter = false;
+      opCounter = false;
       screen = null;
       document.getElementById("screen").value = screen;
     } else {
       screen = null;
       document.getElementById("screen").value = screen;
       screen = input;
+      opCounter = false;
       resCounter = false;
       document.getElementById("screen").value = screen;
     }
   } else {
     resCounter = false;
     if (input == "c") {
+      dotCounter = false;
+      opCounter = false;
       screen = null;
       document.getElementById("screen").value = screen;
     } else {
       screen = screen + input;
       opCounter = true;
       resCounter = false;
+      zeroCounter = true;
       document.getElementById("screen").value = screen;
     }
   }
 }
 
+//zero input validation
+function zero(input) {
+  let screen = document.getElementById("screen").value;
+  if (
+    screen.endsWith("+") ||
+    screen.endsWith("-") ||
+    screen.endsWith("*") ||
+    screen.endsWith("/") ||
+    screen == ""
+  ) {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+  } else if (zeroCounter == true) {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+  }
+}
+//input for operators and the dot
 function buttonOp(operator) {
   let screen = document.getElementById("screen").value;
-  //operators choice
+  zeroCounter = false;
   switch (operator) {
     case "+":
-      resCounter = false;
       dotCounter = false;
+      resCounter = false;
       console.log(dotCounter);
       console.log(screen.endsWith(operator) + " ends with");
       if (screen.endsWith(operator) == true) {
@@ -90,10 +116,12 @@ function buttonOp(operator) {
     case ".":
       if (dotCounter == true) {
       } else {
+        zeroCounter = true;
         dotCounter = true;
         screen = screen + operator;
         document.getElementById("screen").value = screen;
       }
+
       break;
     case "=":
       Equals(screen, operator);
@@ -102,7 +130,7 @@ function buttonOp(operator) {
     default:
   }
 }
-
+// result on anther press of operator
 function GeneralEquals(screen, input) {
   console.log("general equals");
   let res = screen;
@@ -142,44 +170,7 @@ function GeneralEquals(screen, input) {
   }
 }
 
-function Add(screen, input) {
-  console.log("Add");
-  if (screen == "" && input == 0) {
-  } else {
-    screen = screen + input;
-    document.getElementById("screen").value = screen;
-    opCounter = false;
-  }
-}
-
-function Minus(screen, input) {
-  console.log("Minus");
-  if (screen == "" && input == 0) {
-  } else {
-    screen = screen + input;
-    document.getElementById("screen").value = screen;
-    opCounter = false;
-  }
-}
-
-function Times(screen, input) {
-  console.log("times");
-  if (screen == "" && input == 0) {
-  } else {
-    screen = screen + input;
-    document.getElementById("screen").value = screen;
-    opCounter = false;
-  }
-}
-function Division(screen, input) {
-  console.log("Div");
-  if (screen == "" && input == 0) {
-  } else {
-    screen = screen + input;
-    document.getElementById("screen").value = screen;
-    opCounter = false;
-  }
-}
+//result with equal button
 function Equals(screen, input) {
   let screenNew;
 
@@ -209,4 +200,44 @@ function Equals(screen, input) {
   }
 }
 
+// adds + to screen
+function Add(screen, input) {
+  console.log("Add");
+  if (screen == "" && input == 0) {
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+    opCounter = false;
+  }
+}
 
+// adds - to screen
+function Minus(screen, input) {
+  console.log("Minus");
+  if (screen == "" && input == 0) {
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+    opCounter = false;
+  }
+}
+// adds * to screen
+function Times(screen, input) {
+  console.log("times");
+  if (screen == "" && input == 0) {
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+    opCounter = false;
+  }
+}
+// adds / to screen
+function Division(screen, input) {
+  console.log("Div");
+  if (screen == "" && input == 0) {
+  } else {
+    screen = screen + input;
+    document.getElementById("screen").value = screen;
+    opCounter = false;
+  }
+}
