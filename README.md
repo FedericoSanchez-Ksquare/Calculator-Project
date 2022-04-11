@@ -12,6 +12,6 @@
 | As a user when I input numbers, I should be able to see them in the display =  |     |   x  |
 | At any time and in any order, I should be able to multiply, divide, subtract and add a chain of numbers of any length and after hitting equal the display should show the correct result   |     |   x   |
 | No number can begin with multiple 0's   |  x  |      |
-| When clicking the decimal or period element a '.' should be added to the current number and only one decimal can be present per number   |     |      |
+| When clicking the decimal or period element a '.' should be added to the current number and only one decimal can be present per number   |  x   |      |
 | If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + * 7 = is entered, the result should be 35 (i.e., 5 * 7); if 5 * - 5 = is entered, the result should be -25 (i.e., 5 * (-5)).  |   x  |      |
 | Pressing an operator immediately following the equal sing (=) should start a new calculation that operates on the result of the previous evaluation.  |     |   x   |
