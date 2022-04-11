@@ -70,6 +70,11 @@ html,body {
     padding-left: 35px;
 }
 
+.span-3 {
+    grid-column: span 3;
+    text-align: center;
+    padding-left: 35px;
+}
 
     .operator {
         background-color: rgb(214, 146, 0);
@@ -146,7 +151,11 @@ body {
     text-align: left;
     padding-left: 35px;
 }
-
+.span-3 {
+    grid-column: span 3;
+    text-align: center;
+    padding-left: 35px;
+}
 
 .operator {
     background-color: rgb(214, 146, 0);
@@ -226,6 +235,11 @@ body {
         padding-left: 35px;
     }
 
+    .span-3 {
+        grid-column: span 3;
+        text-align: center;
+        padding-left: 35px;
+    }
 
     .operator {
         background-color: rgb(214, 146, 0);
@@ -305,6 +319,11 @@ body {
             padding-left: 35px;
         }
 
+        .span-3 {
+            grid-column: span 3;
+            text-align: center;
+            padding-left: 35px;
+        }
 
         .operator {
             background-color: rgb(214, 146, 0);
@@ -329,9 +348,7 @@ body {
             enabled></textarea>
     </div>
     <div class="wrapper">
-        <input type="button" class="num-input special" onclick="buttonFun('c')" value="AC"> </input>
-        <input type="button" class="num-input special" value="+/-"> </input>
-        <input type="button" class="num-input special" value="%"> </input>
+        <input type="button" class="num-input special span-3" onclick="buttonFun('c')" value="C"> </input>    
         <input type="button" class="num-input operator" onclick="buttonOp('/')" value="/"> </input>
         <input type="button" class="num-input seven" onclick="buttonFun(7)" value="7"> </input>
         <input type="button" class="num-input" onclick="buttonFun(8)" value="8"> </input>
