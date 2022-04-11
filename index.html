@@ -8,8 +8,7 @@
 </head>
 <script type="text/javascript" src="calculator-logic.js"></script>
 <style>
-    html,
-    body {
+html,body {
         width: 100%;
         height: 100%;
         margin: auto;
@@ -21,9 +20,10 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(5, 1fr);
         text-align: right;
-        gap: 15px;
+        gap: 5px;
         color: white;
         border-radius: 50px;
+        width: 350;
     }
 
     .calculator {
@@ -35,7 +35,7 @@
         left: 50%;
         padding: 10px;
         transform: translate(-50%, -50%);
-        width: 450px;
+        width: 350px;
     }
 
     .calculator-screen {
@@ -54,7 +54,7 @@
         border-radius: 50px;
     }
     .num-input{
-        border-radius: 50px;
+        border-radius: 40px;
         padding: 30px 0;
         font-weight: bolder;
         font-size: 35px;
@@ -79,6 +79,247 @@
         background-color: grey;
         color: black;
     }
+@media (min-width: 800px) {
+
+html,
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: rgb(124, 123, 123);
+}
+
+.wrapper {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    text-align: right;
+    gap: 15px;
+    color: white;
+    border-radius: 50px;
+}
+
+.calculator {
+
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    width: 450px;
+}
+
+.calculator-screen {
+    width: 100%;
+    font-size: 60px;
+    height: 70px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: right;
+
+}
+
+.calculator-header {
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.num-input {
+    border-radius: 50px;
+    padding: 30px 0;
+    font-weight: bolder;
+    font-size: 35px;
+    height: 100px;
+    width: 100%;
+    color: white;
+    background-color: rgb(56, 56, 56);
+    border: none;
+}
+
+.span-2 {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 35px;
+}
+
+
+.operator {
+    background-color: rgb(214, 146, 0);
+}
+
+.special {
+    background-color: grey;
+    color: black;
+}
+
+@media (min-width: 1600px) {
+
+    html,
+    body {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background: rgb(124, 123, 123);
+    }
+
+    .wrapper {
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        text-align: right;
+        gap: 15px;
+        color: white;
+        border-radius: 50px;
+        width: 900px;
+    }
+
+    .calculator {
+
+        border-radius: 50px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+        transform: translate(-50%, -50%);
+        width: 900px;
+    }
+
+    .calculator-screen {
+        width: 100%;
+        font-size: 70px;
+        height: 90px;
+        border: none;
+        background-color: black;
+        color: #fff;
+        text-align: right;
+
+    }
+
+    .calculator-header {
+        padding: 15px;
+        border-radius: 50px;
+    }
+
+    .num-input {
+        border-radius: 50px;
+        padding: 30px 0;
+        font-weight: bolder;
+        font-size: 35px;
+        height: 100px;
+        width: 100%;
+        color: white;
+        background-color: rgb(56, 56, 56);
+        border: none;
+    }
+
+    .span-2 {
+        grid-column: span 2;
+        text-align: left;
+        padding-left: 35px;
+    }
+
+
+    .operator {
+        background-color: rgb(214, 146, 0);
+    }
+
+    .special {
+        background-color: grey;
+        color: black;
+    }
+
+    @media (min-width: 2000px) {
+
+        html,
+        body {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background: rgb(124, 123, 123);
+        }
+
+        .wrapper {
+            display: flex;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            text-align: right;
+            gap: 15px;
+            color: white;
+            border-radius: 50px;
+            width: 1100px;
+        }
+
+        .calculator {
+
+            border-radius: 50px;
+            background-color: rgb(0, 0, 0);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 10px;
+            transform: translate(-50%, -50%);
+            width: 1100px;
+        }
+
+        .calculator-screen {
+            width: 100%;
+            font-size: 80px;
+            height: 100px;
+            border: none;
+            background-color: black;
+            color: #fff;
+            text-align: right;
+
+        }
+
+        .calculator-header {
+            padding: 15px;
+            border-radius: 50px;
+        }
+
+        .num-input {
+            border-radius: 50px;
+            padding: 30px 0;
+            font-weight: bolder;
+            font-size: 35px;
+            height: 100px;
+            width: 100%;
+            color: white;
+            background-color: rgb(56, 56, 56);
+            border: none;
+        }
+
+        .span-2 {
+            grid-column: span 2;
+            text-align: left;
+            padding-left: 35px;
+        }
+
+
+        .operator {
+            background-color: rgb(214, 146, 0);
+        }
+
+        .special {
+            background-color: grey;
+            color: black;
+        }
+    }
+}
+}
+
+    
+       
 </style>
 
 <body>
