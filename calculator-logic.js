@@ -124,6 +124,7 @@ function buttonOp(operator) {
 
       break;
     case "=":
+      dotCounter = true;
       Equals(screen, operator);
       break;
 
