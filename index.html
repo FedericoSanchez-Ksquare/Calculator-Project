@@ -46,12 +46,12 @@
         background-color: rgb(0, 0, 0);
         color: #fff;
         text-align: right;
+        
     }
 
     .calculator-header {
         padding: 15px;
         border-radius: 50px;
-
     }
     .num-input{
         border-radius: 50px;
@@ -82,34 +82,34 @@
 </style>
 
 <body>
-        <div class="calculator">
-            <div class="calculator-header">
-                <input type="text" id="screen" class="calculator-screen"  size="5" placeholder="0" autocomplete='off' enabled />
-            </div>
-            <div class="wrapper">
-                <input type="button" class="num-input special" onclick="buttonFun('c')" value="AC"> </input>
-                <input type="button" class="num-input special" value="+/-"> </input>
-                <input type="button" class="num-input special" value="%"> </input>
-                <input type="button" class="num-input operator" onclick="buttonOp('/')" value="/"> </input>
-                <input type="button" class="num-input seven" onclick="buttonFun(7)" value="7"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(8)" value="8"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(9)" value="9"> </input>
-                <input type="button" class="num-input operator" onclick="buttonOp('*')" value="X"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(4)" value="4"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(5)" value="5"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(6)" value="6"> </input>
-                <input type="button" class="num-input operator" onclick="buttonOp('-')" value="-"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(1)" value="1"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(2)" value="2"> </input>
-                <input type="button" class="num-input" onclick="buttonFun(3)" value="3"> </input>
-                <input type="button" class="num-input operator"onclick="buttonOp('+')"value="+"> </input>
-                <input type="button" class="num-input span-2" onclick="buttonFun(0)" value="0"> </input>
-                <input type="button" class="num-input" onclick="buttonOp('.')" value="."> </input>
-                <input type="button" class="num-input operator" onclick="buttonOp('=')" value="="> </input>
-
-
-        </div>
+<div class="calculator">
+    <div class="calculator-header">
+        <input type="text" id="screen" class="calculator-screen"  placeholder="0" maxlength="100"  autocomplete='off' enabled />
     </div>
+    <div class="wrapper">
+        <input type="button" class="num-input special" onclick="buttonFun('c')" value="AC"> </input>
+        <input type="button" class="num-input special" value="+/-"> </input>
+        <input type="button" class="num-input special" value="%"> </input>
+        <input type="button" class="num-input operator" onclick="buttonOp('/')" value="/"> </input>
+        <input type="button" class="num-input seven" onclick="buttonFun(7)" value="7"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(8)" value="8"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(9)" value="9"> </input>
+        <input type="button" class="num-input operator" onclick="buttonOp('*')" value="X"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(4)" value="4"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(5)" value="5"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(6)" value="6"> </input>
+        <input type="button" class="num-input operator" onclick="buttonOp('-')" value="-"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(1)" value="1"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(2)" value="2"> </input>
+        <input type="button" class="num-input" onclick="buttonFun(3)" value="3"> </input>
+        <input type="button" class="num-input operator"onclick="buttonOp('+')"value="+"> </input>
+        <input type="button" class="num-input span-2" onclick="zero(0)" value="0"> </input>
+        <input type="button" class="num-input" onclick="buttonOp('.')" value="."> </input>
+        <input type="button" class="num-input operator" onclick="buttonOp('=')" value="="> </input>
+
+
+    </div>
+</div>
 
 </body>
 
