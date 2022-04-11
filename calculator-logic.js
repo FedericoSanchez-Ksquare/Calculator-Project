@@ -1,8 +1,8 @@
 //
 ///
-let dotCounter = false;
-let resCounter = false;
-let opCounter = false;
+let dotCounter;
+let resCounter;
+let opCounter;
 function buttonFun(input) {
   let screen = document.getElementById("screen").value;
   // Inputing screeen with general numbers
@@ -94,6 +94,7 @@ function buttonOp(operator) {
         screen = screen + operator;
         document.getElementById("screen").value = screen;
       }
+      break;
     case "=":
       Equals(screen, operator);
       break;
