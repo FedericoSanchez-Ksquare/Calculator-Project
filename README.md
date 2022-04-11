@@ -1,5 +1,16 @@
 # Calculator-Project
 
+Parrticipants: Federico Sánchez, Sergio Gamboa
+
+live demo: 
+
+https://federicosanchez-ksquare.github.io/Calculator-Project/
+
+We participated on the weekly challenge, it is on a branch called:
+
+origin/SergioGamboa-Ksquare-Responsiva
+
+
 # FirstProject
 | User Stories     | Sergio | Federico |
 | ---------------- | :--: | ---: |
