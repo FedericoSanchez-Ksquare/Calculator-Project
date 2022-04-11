@@ -1,5 +1,6 @@
 //
 ///
+let dotCounter = false;
 let resCounter = false;
 let opCounter = false;
 function buttonFun(input) {
@@ -36,6 +37,8 @@ function buttonOp(operator) {
   switch (operator) {
     case "+":
       resCounter = false;
+      dotCounter = false;
+      console.log(dotCounter);
       console.log(screen.endsWith(operator) + " ends with");
       if (screen.endsWith(operator) == true) {
       } else {
@@ -47,6 +50,7 @@ function buttonOp(operator) {
       }
       break;
     case "-":
+      dotCounter = false;
       resCounter = false;
       console.log(screen.endsWith(operator) + " ends with");
       if (screen.endsWith(operator) == true) {
@@ -59,6 +63,7 @@ function buttonOp(operator) {
       }
       break;
     case "*":
+      dotCounter = false;
       resCounter = false;
       console.log(screen.endsWith(operator) + " ends with");
       if (screen.endsWith(operator) == true || screen.endsWith("/")) {
@@ -71,6 +76,7 @@ function buttonOp(operator) {
       }
       break;
     case "/":
+      dotCounter = false;
       resCounter = false;
       if (screen.endsWith(operator) == true || screen.endsWith("*")) {
       } else {
@@ -82,10 +88,12 @@ function buttonOp(operator) {
       }
       break;
     case ".":
-      screen = screen + operator;
-      document.getElementById("screen").value = screen;
-
-      break;
+      if (dotCounter == true) {
+      } else {
+        dotCounter = true;
+        screen = screen + operator;
+        document.getElementById("screen").value = screen;
+      }
     case "=":
       Equals(screen, operator);
       break;
@@ -199,3 +207,5 @@ function Equals(screen, input) {
     resCounter = true;
   }
 }
+
+
